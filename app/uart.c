@@ -378,25 +378,25 @@ bool UART_IsCommandAvailable(void)
 			return false;
 
 #if defined(ENABLE_MESSENGER) && defined(ENABLE_MESSENGER_UART)
-    if (strncmp(((char*)UART_DMA_Buffer) + gUART_WriteIndex, "SMS:",4) == 0)
-    {
+		if (strncmp(((char*)UART_DMA_Buffer) + gUART_WriteIndex, "SMS:",4) == 0)
+		{
 
-      char txMessage[PAYLOAD_LENGTH + 4];
-      memset(txMessage, 0, sizeof(txMessage));
-      snprintf(txMessage, (PAYLOAD_LENGTH + 4), "%s", &UART_DMA_Buffer[gUART_WriteIndex + 4]);
+			char txMessage[PAYLOAD_LENGTH + 4];
+			memset(txMessage, 0, sizeof(txMessage));
+			snprintf(txMessage, (PAYLOAD_LENGTH + 4), "%s", &UART_DMA_Buffer[gUART_WriteIndex + 4]);
 
 			for (int i = 0; txMessage[i] != '\0'; i++)
 			{
 				if (txMessage[i] == '\r' || txMessage[i] == '\n')
 					txMessage[i] = '\0';
 			}
-      if (strlen(txMessage) > 0)
-      {
-        MSG_Send(txMessage);
-        UART_printf("SMS>%s\r\n", txMessage);
-        gUpdateDisplay = true;
-      }
-    }
+			if (strlen(txMessage) > 0)
+			{
+				MSG_Send(txMessage);
+				UART_printf("SMS>%s\r\n", txMessage);
+				gUpdateDisplay = true;
+			}
+		}
 
 #endif
 		while (gUART_WriteIndex != DmaLength && UART_DMA_Buffer[gUART_WriteIndex] != 0xABU)
