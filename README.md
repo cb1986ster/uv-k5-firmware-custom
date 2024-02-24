@@ -5,6 +5,7 @@
 This repository is a fork of [Egzumer firmare](https://github.com/egzumer/uv-k5-firmware-custom) plus my changes:
 
 * `ENABLE_SPECTRUM_CHANNEL_SCAN` this enables spectrum channel scan mode (enter by going into memory mode and press F+5, this allows SUPER fast channel scanning (**4.5x faster than regular scanning**), regular scan of 200 memory channels takes roughly 18 seconds, **spectrum memory scan takes roughly 4 seconds**, if you have less channels stored i.e 50 - the spectrum memory scan will take only **1 second**
+* **NUNU Protocol** - message hopping mesh network functionality which allows to extend the range of infrastructure-less communications via intermediate stations (nodes), more info at [Mesh network](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/43-%E2%80%90-Mesh-network)
 * `ENABLE_ENCRYPTION` - ChaCha20 256 bit encryption for the messenger, more info at [Encryption](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/44-%E2%80%90-Encryption#details)
 * Fixed AM AGC so **AM demodulation is crystal clear**, no audible clicks, no need for `AM_FIX`.
 * `RxOff` menu setting offsets the receive frequency by any specified amount in the range of `0-150Mhz` for use with upconverters. Allows to fine tune frequency (in `1kHz` steps) as opposed to other implementations that use hardcoded offsets. (**IMPORTANT: Make sure you set this value to 0 if not using an upconverter, when used for the first time. Otherwise it might load some random offset from EEPROM.**)
@@ -35,9 +36,17 @@ Anyway, have fun.
 ---
 ## Videos:
 
+Video showing FM reception in spectrum channel mode:
+
+https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/a30c1031-a4c9-4021-8c44-c7532e354d27
+
 Video showing AM reception in spectrum channel mode:
 
 https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/638a9985-b808-4cbf-9b98-628df64dba46
+
+Video showing FM reception in spectrum channel mode:
+
+https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/a106f5cb-8794-4149-9cbb-2f672c0c5b39
 
 Video showing AM reception in VFO mode:
 
@@ -46,6 +55,14 @@ Video showing AM reception in VFO mode:
 Video showing SSB reception with a CB antenna mounted on the roof of a car:
 
 https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/d0e931ba-90ca-4644-b48e-4aace1d1842c
+
+Video of the NUNU Protocol enabling message hopping (available in v.21.0):
+
+https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/5392ce36-9308-4a54-a92c-a82474b4b0d5
+
+Video of the NUNU Protocol with 4 radios:
+
+https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/078dca54-b9aa-4930-bf19-0529c1c1791b
 
 ## Main features:
 * many of OneOfEleven mods:
@@ -91,6 +108,8 @@ https://github.com/kamilsss655/uv-k5-firmware-custom/assets/8842065/d0e931ba-90c
 * [Spectrum analyzer](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/40-%E2%80%90-Spectrum-analyzer)
 
 * [Messenger](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/42--%E2%80%90-Messenger)
+
+* [Mesh network](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/43-%E2%80%90-Mesh-network)
 
 * [Encryption](https://github.com/kamilsss655/uv-k5-firmware-custom/wiki/44-%E2%80%90-Encryption)
 
